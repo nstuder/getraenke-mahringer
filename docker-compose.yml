@@ -1,0 +1,29 @@
+services:
+  getraenke-mahringer-web:
+    container_name: getraenke-mahringer-web
+    image: getraenke-mahringer
+    build: .
+    restart: always
+    ports:
+      - '3000:3000'
+    volumes:
+      - ./data:/app/data
+    labels:
+      - 'traefik.enable=true'
+      - 'traefik.http.routers.mahringer.rule=Host(`getraenke-mahringer.niklas-studer.com`)'
+      - 'traefik.http.routers.mahringer.entrypoints=web, websecure'
+      - 'traefik.http.routers.mahringer.tls=true'
+      - 'traefik.http.routers.mahringer.tls.certresolver=myresolver'
+      - 'traefik.http.middlewares.mahringer.compress=true'
+      - 'traefik.http.middlewares.mahringer.plugin.httpCache.maxTtl=300'
+    networks:
+      - mahringer_network
+      - traefik
+    #env_file:
+    #  - .env
+networks:
+  traefik:
+    external: true
+  mahringer_network:
+    driver: bridge
+    internal: true
