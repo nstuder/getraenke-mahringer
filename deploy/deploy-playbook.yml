@@ -1,6 +1,6 @@
 - name: deploy getraenke-mahringer
   hosts: servers
-  gather_facts: no
+  gather_facts: yes
   tasks:
       - name: Update Git branch
         ansible.builtin.git:
@@ -12,5 +12,5 @@
       - name: Create and start services
         community.docker.docker_compose_v2:
             project_src: /home/nstuder/getraenke-mahringer
-            build: true
+            build: always
         register: output

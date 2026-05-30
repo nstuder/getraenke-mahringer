@@ -1,2 +1,2 @@
 [servers]
-v2202202168210178683.hotsrv.de
+v2202202168210178683.hotsrv.de ansible_python_interpreter=/usr/bin/python3
