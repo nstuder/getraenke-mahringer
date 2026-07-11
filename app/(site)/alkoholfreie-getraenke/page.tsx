@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import ProductList from '@/components/organisms/ProductList';
+import PriceCallout from '@/components/molecules/PriceCallout';
 
 export const metadata: Metadata = {
     title: "Alkoholfreie Getränke",
@@ -32,6 +33,7 @@ export default async function AlkoholfreieGetraenkePage() {
                 <p className="text-lg text-gray-700">
                     Entdecken Sie unser breites Sortiment an erfrischenden alkoholfreien Getränken.
                 </p>
+                <PriceCallout />
             </div>
             <ProductList products={products} categoryImages={categoryImages}/>
         </div>

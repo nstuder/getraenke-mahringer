@@ -7,7 +7,7 @@ interface ProductProps {
 
 export default function Product({ name, verkaufsmenge, marke, beschreibung }: ProductProps) {
   return (
-    <div className="py-3 px-4 border-b border-gray-100 flex items-center justify-between hover:bg-gray-50 transition-colors">
+    <div className="py-1 md:py-3 px-2 md:px-4 border-b border-gray-100 flex items-center justify-between hover:bg-gray-50 transition-colors">
       <div className="flex-1">
         <div className="text-lg font-bold text-darkblue leading-tight">{name}</div>
         <div className="text-sm text-gray-600">{marke}</div>

@@ -44,7 +44,7 @@ export default function Home() {
 
     return (
         <div className="space-y-12 md:container md:mx-auto">
-            <h1 className="text-4xl font-bold text-darkblue mb-12">Willkommen bei Getränkeervice Mahringer</h1>
+            <h1 className="text-4xl font-bold text-darkblue mb-12">Willkommen bei Getränkeservice Mahringer</h1>
             <p>Wer in Mannheim Getränke und Lieferservice genießen will, ist hier genau richtig. Der Mahringer
                 Getränkehandel lädt jetzt schon seit 100 Jahren dazu ein, den Tag hinter sich zu lassen und die Getränke
                 und Lieferservice auf eine besondere Art zu erleben. Kommt doch einfach mal vorbei, und lasst euch von
@@ -55,11 +55,10 @@ export default function Home() {
             </h2>
             <p>Neben dem klassischen Lieferdienst für Getränke bieten wir auch einen Verleihservice für Ihre nächste
                 Veranstaltung. Schauen Sie sich um auf unseren Seiten, entdecken Sie die Vielfalt unseres
-                Getränkesortiments, welches wir neben unserem Ladengeschäft auch bis zu Ihnen ins Büro oder nach Hause
-                liefern.
+                Getränkesortiments, welches wir bis zu Ihnen ins Büro oder nach Hause liefern.
             </p>
 
-            <div className="not-prose grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+            <div className="not-prose grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-2 md:gap-8">
                 {cards.map((card, index) => (
                     <Card key={index} {...card} />
                 ))}

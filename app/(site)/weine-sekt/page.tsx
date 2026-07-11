@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import ProductList from '@/components/organisms/ProductList';
+import PriceCallout from '@/components/molecules/PriceCallout';
 
 export const metadata: Metadata = {
     title: "Wein & Sekt",
@@ -33,6 +34,7 @@ export default async function WeineSektPage() {
                 <p className="text-lg text-gray-700">
                     Erlesene Weine und prickelnder Sekt für Ihre besonderen Anlässe.
                 </p>
+                <PriceCallout />
             </div>
             <ProductList products={products} categoryImages={categoryImages}/>
         </div>

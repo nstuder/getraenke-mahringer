@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Image from 'next/image';
+import PriceCallout from '@/components/molecules/PriceCallout';
 
 export const metadata: Metadata = {
     title: "Verleihservice",
@@ -33,6 +34,7 @@ export default async function Page() {
                 Wünsche in Erfüllung gehen zu lassen, damit Ihrer nächsten Party/Veranstaltung nichts mehr im Wege
                 steht.
             </p>
+            <PriceCallout />
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                 <div>
                     <h2 className="text-2xl font-semibold mb-4 text-darkblue">Unsere Produkte</h2>

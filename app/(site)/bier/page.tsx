@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import ProductList from '@/components/organisms/ProductList';
+import PriceCallout from '@/components/molecules/PriceCallout';
 
 export const metadata: Metadata = {
     title: "Bier & Fassbier",
@@ -32,6 +33,7 @@ export default async function BierPage() {
                 <p className="text-lg text-gray-700">
                     Wir führen eine Vielzahl an regionalen und überregionalen Biersorten.
                 </p>
+                <PriceCallout />
             </div>
             <ProductList products={products} categoryImages={categoryImages}/>
         </div>
