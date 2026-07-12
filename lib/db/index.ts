@@ -4,7 +4,7 @@ import * as productSchema from '@/schema/products';
 import * as customerSchema from '@/schema/customers';
 
 const client = createClient({
-  url: 'file:data/database.sqlite',
+  url: process.env.DATABASE_URL || 'file:data/database.sqlite',
 });
 
 const schema = {

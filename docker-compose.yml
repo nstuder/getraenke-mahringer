@@ -16,11 +16,14 @@ services:
       - 'traefik.http.routers.mahringer.tls.certresolver=myresolver'
       - 'traefik.http.middlewares.mahringer.compress=true'
       - 'traefik.http.middlewares.mahringer.plugin.httpCache.maxTtl=300'
+    environment:
+      - AUTH_TRUST_HOST=true
+      - DATABASE_URL=file:/app/data/database.sqlite
     networks:
       - mahringer_network
       - traefik
-    #env_file:
-    #  - .env
+    env_file:
+      - .env
 networks:
   traefik:
     external: true
