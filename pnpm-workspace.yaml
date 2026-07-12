@@ -1,11 +1,2 @@
-allowBuilds:
-  sharp: true
-  unrs-resolver: true
-ignoredBuiltDependencies:
-  - better-sqlite3@12.10.0
-  - core-js@3.49.0
-  - esbuild@0.18.20
-  - esbuild@0.25.12
-  - esbuild@0.28.0
-  - sharp
-  - unrs-resolver
+packages:
+  - "."

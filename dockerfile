@@ -9,6 +9,13 @@ ARG NODE_VERSION=24.13.0-slim
 
 FROM node:${NODE_VERSION} AS dependencies
 
+# Install build dependencies for native modules
+RUN apt-get update && apt-get install -y \
+    python3 \
+    make \
+    g++ \
+    && rm -rf /var/lib/apt/lists/*
+
 # Set working directory
 WORKDIR /app
 

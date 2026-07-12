@@ -8,6 +8,14 @@
     "start": "next start",
     "lint": "eslint"
   },
+  "pnpm": {
+    "onlyBuiltDependencies": [
+      "better-sqlite3",
+      "core-js",
+      "esbuild",
+      "sharp"
+    ]
+  },
   "dependencies": {
     "@libsql/client": "0.17.3",
     "@tailwindcss/typography": "0.5.19",
