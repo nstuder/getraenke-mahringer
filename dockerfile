@@ -101,7 +101,7 @@ RUN mkdir .next
 RUN chown node:node .next
 
 # Create data directory and set permissions
-RUN mkdir data && chown node:node data
+RUN mkdir -p data && chown -R node:node data && chmod 775 data
 
 # Automatically leverage output traces to reduce image size
 # https://nextjs.org/docs/advanced-features/output-file-tracing
