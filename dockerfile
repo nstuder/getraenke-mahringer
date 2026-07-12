@@ -31,7 +31,7 @@ RUN --mount=type=cache,target=/root/.npm \
   elif [ -f yarn.lock ]; then \
     corepack enable yarn && yarn install --frozen-lockfile --production=false; \
   elif [ -f pnpm-lock.yaml ]; then \
-    corepack enable pnpm && pnpm install --frozen-lockfile; \
+    corepack enable pnpm && corepack prepare pnpm@10.0.0 --activate && pnpm install; \
   else \
     echo "No lockfile found." && exit 1; \
   fi
@@ -69,7 +69,7 @@ RUN if [ -f package-lock.json ]; then \
   elif [ -f yarn.lock ]; then \
     corepack enable yarn && yarn build; \
   elif [ -f pnpm-lock.yaml ]; then \
-    corepack enable pnpm && pnpm build; \
+    corepack enable pnpm && corepack prepare pnpm@10.0.0 --activate && pnpm build; \
   else \
     echo "No lockfile found." && exit 1; \
   fi
