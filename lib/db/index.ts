@@ -1,11 +1,12 @@
 import { drizzle } from 'drizzle-orm/libsql';
+import { migrate } from 'drizzle-orm/libsql/migrator';
 import { createClient } from '@libsql/client';
 import * as productSchema from '@/schema/products';
 import * as customerSchema from '@/schema/customers';
 import fs from 'fs';
 import path from 'path';
 
-const databaseUrl = process.env.DATABASE_URL || 'file:data/database.sqlite';
+const databaseUrl = process.env.DATABASE_URL || 'file:/app/data/database.sqlite';
 
 // Ensure the database file exists if it's a local file
 if (databaseUrl.startsWith('file:')) {
@@ -37,3 +38,10 @@ const schema = {
 };
 
 export const db = drizzle(client, { schema });
+
+// Run migrations
+const migrationPath = path.join(process.cwd(), 'drizzle');
+
+migrate(db, { migrationsFolder: migrationPath })
+  .then(() => console.log('Migrations applied successfully'))
+  .catch((err) => console.error('Failed to apply migrations:', err));
