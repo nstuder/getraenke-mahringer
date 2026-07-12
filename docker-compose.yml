@@ -7,7 +7,7 @@ services:
     ports:
       - '3003:3000'
     volumes:
-      - ./data:/app/data
+      - mahringer_data:/app/data
     labels:
       - 'traefik.enable=true'
       - 'traefik.http.routers.mahringer.rule=Host(`getraenke-mahringer.niklas-studer.com`)'
@@ -30,3 +30,6 @@ networks:
   mahringer_network:
     driver: bridge
     internal: true
+
+volumes:
+  mahringer_data:

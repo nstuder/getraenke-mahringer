@@ -17,7 +17,13 @@ if (databaseUrl.startsWith('file:')) {
   }
 
   if (!fs.existsSync(filePath)) {
-    fs.writeFileSync(filePath, '');
+    try {
+      // Check if directory is writable
+      fs.accessSync(dir, fs.constants.W_OK);
+      fs.writeFileSync(filePath, '');
+    } catch (e) {
+      console.warn(`Warning: Could not create database file at ${filePath}. This might be expected if the directory is read-only or the file will be created by the database client. Error:`, e instanceof Error ? e.message : e);
+    }
   }
 }
 
