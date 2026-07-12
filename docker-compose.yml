@@ -18,7 +18,7 @@ services:
       - 'traefik.http.middlewares.mahringer.plugin.httpCache.maxTtl=300'
     environment:
       - AUTH_TRUST_HOST=true
-      - DATABASE_URL=file:/app/data/database.sqlite?mode=rwc
+      - DATABASE_URL=file:/app/data/database.sqlite
     networks:
       - mahringer_network
       - traefik
